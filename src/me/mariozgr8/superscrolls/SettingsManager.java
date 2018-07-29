@@ -80,7 +80,7 @@ public class SettingsManager {
 		}
 	}
 	
-	
+	//Methods that gather informations concerning the config
 	public FileConfiguration getConfig() {
 		return config;
 	}

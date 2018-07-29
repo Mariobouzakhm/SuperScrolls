@@ -1,0 +1,56 @@
+name: SuperScrolls
+main: me.mariozgr8.superscrolls.SuperScrolls
+version: 1.0
+author: Marioz_
+
+commands:
+  sscroll:
+    usage: /sscroll [args]
+    description: Main Command 
+    aliases: [scroll]
+permissions:
+  superscrolls.*:
+    description: Give complete access over the plugin
+    default: OP
+    children:
+      superscrolls.open: true
+      superscrolls.info: true
+      superscrolls.help: true
+      superscrolls.apply.*: true
+  superscrolls.apply.*:
+    description: Allow the user to add all scrolls to items
+    default: OP
+    children:
+      superscrolls.apply.blocksbroken: true
+      superscrolls.apply.oresmined: true
+      superscrolls.apply.damagedealt: true
+      superscrolls.apply.mobskilled: true
+      superscrolls.apply.arrowsshot: true
+      superscrolls.apply.logsbroken: true
+  superscrolls.open:
+    description: Allow the user to run /scroll
+    default: OP
+  superscrolls.info:
+    description: Allow the user to run /scroll info
+    default: OP
+  superscrolls.help:
+    description: Allow the user to run /scroll help
+    default: OP
+  superscrolls.apply.blocksbroken:
+    description: Allow the user to apply Blocks Broken scroll to items
+    default: OP
+  superscrolls.apply.oresmined:
+    description: Allow the user to apply Ores Mined scroll to items
+    default: OP
+  superscrolls.apply.damagedealt:
+    description: Allow the user to apply Damage Dealt scroll to items
+    default: OP
+  superscrolls.apply.mobskilled:
+    description: Allow the user to apply Mobs Killed scroll to items
+  	default: OP
+  superscrolls.apply.arrowsshot:
+    description: Allow the user to apply Arrows Shot scroll to items
+    default: OP
+  superscrolls.apply.logsbroken:
+    description: Allow the user to apply Logs Broken scroll to items
+    default: OP

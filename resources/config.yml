@@ -1,0 +1,15 @@
+#Config Version ! Don't modify this number unless you know what you are doing !
+config-version: 1.0
+#Settings relating to the scrolls
+scroll-material: '339'
+scroll-lore: '&4Super Scroll'
+no-perm-lore: '&c&lNo Permission'
+scroll-inventory-name: '&6Super Scrolls Inventory'
+scroll-info-inventory-name" '&6Scrolls Informations Inventory'
+scroll-blockBroken-name: '&c&lBlock Broken Scroll'
+scroll-oresMined-name: '&c&lOres Mined Scroll'
+scroll-damageDealt-name: '&c&lDamage Dealt Scroll'
+scroll-mobsKilled-name: '&c&lMobs Killed Scroll'
+scroll-arrowshot-name: '&c&lArrows Shot Scroll'
+scroll-logsbroken-name: '&c&lLogs Broken Scroll'
+

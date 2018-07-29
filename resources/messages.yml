@@ -1,0 +1,11 @@
+#Config Version ! Don't modify this number unless you know what you are doing !
+config-version: 1.0
+
+#Plugin Messages
+messages:
+  prefix: "&7[&4SuperScrolls&7]&4: "
+  error-message: '&4An error occured ! Please try again or contact an adminstrator !'
+  noperms: "&4You don't have enough permission to perform this command !"
+  wrongargs: "&cWrong Args ! Please refer to /help for more informations"
+  playeronly: "&4This command can only be performed by a player"
+  playeroffline: "&cCannot find %player% !"

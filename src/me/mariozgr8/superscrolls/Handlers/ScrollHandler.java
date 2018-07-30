@@ -226,7 +226,7 @@ public class ScrollHandler {
 		return inv;
 	}
 	public Inventory getScrollInfoInv() {
-		Inventory inv = Bukkit.getServer().createInventory(null, 9, this.files.getScrollInvName());
+		Inventory inv = Bukkit.getServer().createInventory(null, 9, this.files.getScrollInfoInvName());
 		inv.setItem(0, this.getGlassPane());
 		inv.setItem(1, this.getBlockBrokenScrollInfo());
 		inv.setItem(2, this.getOresMinedScrollInfo());

@@ -47,7 +47,7 @@ permissions:
     default: OP
   superscrolls.apply.mobskilled:
     description: Allow the user to apply Mobs Killed scroll to items
-  	default: OP
+    default: OP
   superscrolls.apply.arrowsshot:
     description: Allow the user to apply Arrows Shot scroll to items
     default: OP

@@ -34,7 +34,7 @@ public class ClickListener implements Listener {
 		ItemStack i = e.getCurrentItem();
 		
 		//Cancel all the events related to the plugin
-		if(inv.getName().equalsIgnoreCase(this.files.getScrollInvName())) {
+		if(inv.getName().equalsIgnoreCase(this.files.getScrollInvName()) || inv.getName().equals(this.files.getScrollInfoInvName())) {
 			e.setCancelled(true);
 		}
 		

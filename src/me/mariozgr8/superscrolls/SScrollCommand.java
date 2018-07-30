@@ -44,6 +44,7 @@ public class SScrollCommand implements CommandExecutor {
 				}
 				else {
 					this.files.sendMessageToPlayer(p, this.files.getNoperms());
+					return true;
 				}
 			}
 			String subCommand = args[0];
@@ -55,6 +56,7 @@ public class SScrollCommand implements CommandExecutor {
 				}
 				else {
 					this.files.sendMessageToPlayer(p, this.files.getNoperms());
+					return true;
 				}
 			}
 			else if(subCommand.equals("help")) {
@@ -65,6 +67,7 @@ public class SScrollCommand implements CommandExecutor {
 				}
 				else {
 					this.files.sendMessageToPlayer(p, this.files.getNoperms());
+					return true;
 				}
 			}
 			else {

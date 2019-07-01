@@ -15,7 +15,6 @@ public class SScrollCommand implements CommandExecutor {
 	
 	
 	public SScrollCommand(SuperScrolls ss) {
-		
 	}
 	
 	

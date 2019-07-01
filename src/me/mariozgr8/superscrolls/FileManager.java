@@ -21,6 +21,7 @@ public class FileManager {
 	private String mobsKilledScroll;
 	private String arrowShotScroll;
 	private String logsBrokenScroll;
+	private String playersKilledScroll;
 	
 	//Settings Concerning the messages sent to players retrieved from the messages.yml file !
 	private String prefix;
@@ -47,6 +48,7 @@ public class FileManager {
 		mobsKilledScroll = p.getConfig().getString("scroll-mobsKilled-name");
 		arrowShotScroll = p.getConfig().getString("scroll-arrowshot-name");
 		logsBrokenScroll = p.getConfig().getString("scroll-logsbroken-name");
+		playersKilledScroll = p.getConfig().getString("scroll-playerskilled-name");
 	
 		prefix = p.getMessageConfig().getString("messages.prefix");
 		errorMessage = p.getMessageConfig().getString("messages.error-message");
@@ -99,6 +101,9 @@ public class FileManager {
 	public String getLogsBrokenScroll() {
 		return logsBrokenScroll;
 	}
+	public String getPlayerskilledScroll() {
+	    return playersKilledScroll;
+    }
 	public String getPrefix() {
 		return prefix;
 	}

@@ -1,6 +1,6 @@
 name: SuperScrolls
 main: me.mariozgr8.superscrolls.SuperScrolls
-version: 1.0
+version: 1.1
 author: Marioz_
 
 commands:
@@ -27,6 +27,7 @@ permissions:
       superscrolls.apply.mobskilled: true
       superscrolls.apply.arrowsshot: true
       superscrolls.apply.logsbroken: true
+      superscrolls.apply.playerskilled: true
   superscrolls.open:
     description: Allow the user to run /scroll
     default: OP
@@ -53,4 +54,7 @@ permissions:
     default: OP
   superscrolls.apply.logsbroken:
     description: Allow the user to apply Logs Broken scroll to items
+    default: OP
+  superscrolls.apply.playerskilled:
+    description: Allow the user to apply the Players Killed Scroll to items
     default: OP

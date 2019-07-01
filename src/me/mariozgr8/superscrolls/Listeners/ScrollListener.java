@@ -54,6 +54,13 @@ public class ScrollListener implements Listener {
 					this.handler.incrementMobsKilled(i);
 				}
 			}
+			if(this.handler.hasPlayersKilled(i)) {
+				p.sendMessage("Worked");
+				Entity et = e.getEntity();
+				if(et instanceof Player) {
+					this.handler.incrementPlayersKilled(i);
+				}
+			}
 		}	
 	}
 	

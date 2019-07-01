@@ -15,6 +15,7 @@ public class PermissionManager {
 	public String mobsKilledPerm = "superscrolls.apply.mobskilled";
 	public String arrowsShotPerm = "superscrolls.apply.arrowsshot";
 	public String logsBrokenPerm = "superscrolls.apply.logsbroken";
+	public String playersKilledPerm = "superscrolls.apply.playerskilled";
 	
 	public boolean hasPermission(Player p, String perm) {
 		return p.hasPermission(perm);

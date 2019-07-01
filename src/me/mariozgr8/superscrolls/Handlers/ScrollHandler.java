@@ -124,6 +124,20 @@ public class ScrollHandler {
 			}
 		}
 	}
+
+	public void incrementPlayersKilled(ItemStack i) {
+	    ItemMeta imeta = i.getItemMeta();
+	    List<String> lore = imeta.getLore();
+        for(int j = 0; j<lore.size(); j++) {
+            if(lore.get(j).contains("Players Killed: ")) {
+                int amount = Integer.parseInt(ChatColor.stripColor(lore.get(j).replace("Players Killed: ", ""))) + 1;
+                lore.set(j, this.files.changeColor("&8&lPlayers Killed: "+amount));
+                imeta.setLore(lore);
+                i.setItemMeta(imeta);
+                return;
+            }
+        }
+    }
 	
 	
 	public boolean hasBlockMined(ItemStack i) {
@@ -210,6 +224,21 @@ public class ScrollHandler {
 		}
 		return false;
 	}
+
+	public boolean hasPlayersKilled(ItemStack i) {
+		if(i.hasItemMeta()) {
+			ItemMeta imeta = i.getItemMeta();
+			if(imeta.hasLore()) {
+				List<String> lore = imeta.getLore();
+				for(String lores: lore) {
+					if(lores.startsWith(this.files.changeColor("&8&lPlayers Killed: "))) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+    }
 	
 	
 	public Inventory getScrollInv(Player p) {
@@ -218,7 +247,7 @@ public class ScrollHandler {
 		inv.setItem(1, this.getBlockBrokenScroll(p));
 		inv.setItem(2, this.getOresMinedScroll(p));
 		inv.setItem(3, this.getDamageDealtScroll(p));
-		inv.setItem(4, this.getGlassPane());
+		inv.setItem(4, this.getPlayersKilledScroll(p));
 		inv.setItem(5, this.getMobsKilledScroll(p));
 		inv.setItem(6, this.getArrowsShowScroll(p));
 		inv.setItem(7, this.getLogsBrokenScroll(p));
@@ -231,7 +260,7 @@ public class ScrollHandler {
 		inv.setItem(1, this.getBlockBrokenScrollInfo());
 		inv.setItem(2, this.getOresMinedScrollInfo());
 		inv.setItem(3, this.getDamageDealtScrollInfo());
-		inv.setItem(4, this.getGlassPane());
+		inv.setItem(4, this.getPlayersKilledScrollInfo());
 		inv.setItem(5, this.getMobsKilledScrollInfo());
 		inv.setItem(6, this.getArrowsShowScrollInfo());
 		inv.setItem(7, this.getLogsBrokenScrollInfo());
@@ -247,6 +276,34 @@ public class ScrollHandler {
 		return i;
 		
 	}
+	public ItemStack getPlayersKilledScroll(Player p) {
+		ItemStack i = new ItemStack(this.getScrollMaterial(), 1, (byte) this.getScrollDataValue());
+		ItemMeta imeta = i.getItemMeta();
+		imeta.setDisplayName(changeColor(this.files.getPlayerskilledScroll()));
+
+		ArrayList<String> lore = new ArrayList<String>();
+		lore.add(changeColor("&5&lAppicable on: &dSword and Bow"));
+		lore.add(changeColor(this.perms.permLore(p, this.perms.playersKilledPerm)));
+
+		imeta.setLore(lore);
+		i.setItemMeta(imeta);
+
+		return i;
+	}
+	public ItemStack getPlayersKilledScrollInfo() {
+        ItemStack i = new ItemStack(this.getScrollMaterial(), 1, (byte) this.getScrollDataValue());
+        ItemMeta imeta = i.getItemMeta();
+        imeta.setDisplayName(changeColor(this.files.getPlayerskilledScroll()));
+
+        ArrayList<String> lore =  new ArrayList<String>();
+        lore.add(changeColor("&5&lAppicable on: &dSword and Bow"));
+        lore.add(" ");
+        lore.add(changeColor("%56Scroll that counts the amount of players killed using the designated item"));
+
+        imeta.setLore(lore);
+        i.setItemMeta(imeta);
+        return i;
+    }
 	public ItemStack getBlockBrokenScroll(Player p) {
 		ItemStack i = new ItemStack(this.getScrollMaterial(), 1, (byte) this.getScrollDataValue());
 		ItemMeta imeta = i.getItemMeta();

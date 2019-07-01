@@ -194,6 +194,32 @@ public class ClickListener implements Listener {
 					}
 				}
 			}
+			if(i.equals(this.handler.getPlayersKilledScroll(p))) {
+				if(this.perms.hasPermission(p, this.perms.playersKilledPerm)) {
+					if(this.handler.isSword(it) || this.handler.isBow(it)) {
+						if(this.handler.hasPlayersKilled(it)) {
+							p.sendMessage("2");
+							this.files.sendMessageToPlayer(p, "&6This scroll is already applied to this item !");
+							return;
+						}
+						else {
+							p.sendMessage("1");
+							ItemMeta imeta = it.getItemMeta();
+							ArrayList<String> newLore = new ArrayList<String>();
+							if(imeta.hasLore()) {
+								newLore.addAll(imeta.getLore());
+							}
+							newLore.add(this.files.changeColor("&8&lPlayers Killed: 0"));
+							imeta.setLore(newLore);
+							it.setItemMeta(imeta);
+						}
+					}
+					else {
+						this.files.sendMessageToPlayer(p, "&6This scroll is only applicable for swords and bows !");
+						return;
+					}
+				}
+			}
 		}
 	}
 }
